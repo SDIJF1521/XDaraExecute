@@ -12,7 +12,7 @@ class SqlIte(metaclass=MyData):
 
     def execute(self, expression: str, *data):
         if self.database is None:
-            self.database = f'./xbbot/data/{self.database}.db'
+            self.database = f'./xbbot/data/{GaiJson.gain().数据库名称}.db'
         print(expression % data)
         conn = sqlite3.connect(self.database)
         cursor = conn.cursor()
