@@ -7,5 +7,5 @@ def get_config_classes():
             'sqlite': SqliteConfig(),
             'json': JasonConfig(),
             'redis': RedisConfig()}
-    rtn.update()
+    rtn.update(CreateConfigParent.get_class_dic())
     return rtn
