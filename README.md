@@ -164,7 +164,16 @@ your_project/
               
 ### 便携查询
   - 便携查询功能依赖于配置文件，功能是通过配置文件来确定字段的正确，便捷方法都是使用DataExecute()类调用下面提供案例一及语法
-    - 便携查询的的便捷函数是`DataExecute()`$类的$
+    - 便携查询的的便捷函数是`DataExecute()`$类的data_read_execute方法该方法的参数信息如下$
+      ```python
+      DataExecute(name).data_read_execute(form_name,creening_condition,field)
+      '''
+      name：容器名称，该参数为必填参数
+      form_name：表单名称,该参数为必填参数
+      creening_conditio：字段名，该参数为可选参数不填时默认为None在不写时为所有字段
+      field：筛选条件，该参数为该参数为可选参数不填时默认为None
+      '''
+      ```
 ### 便携存储
 ### 高阶查询
 ### 高阶存储
