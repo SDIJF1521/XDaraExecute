@@ -14,18 +14,22 @@ class Redis(metaclass=MyData):
         self.port = None
 
     def execute(self):
-
         if self.host is None:
             self.host = GaiJson().gain().redis设置['redis-host']
         if self.port is None:
             self.port = GaiJson().gain().redis设置['redis-port']
-            pool = redis.ConnectionPool(
+        password = GaiJson().gain().redis设置.get('redis-password', None)
+        db = GaiJson().gain().redis设置.get('redis-db', 0)
+
+        pool = redis.ConnectionPool(
             host=self.host,
             port=self.port,
+            password=password,
+            db=db,
             decode_responses=True
         )
 
-        return redis.Redis(connection_pool=self.pool)
+        return redis.Redis(connection_pool=pool)
 
     def data_read_execute(self, form_name: str, screening_condition: str = None, field: str = None):
         try:
