@@ -113,11 +113,12 @@ class JasonConfig(DataConfig):
 # redis
 class RedisConfig(DataConfig):
     def create(self, file_name):
-        config = {
-            'redis-host': '127.0.0.1',
-            'redis-port': 6379
-
-        }
+        config = {"redis设置": {
+                        "redis-host": "127.0.0.1",
+                        "redis-port": 6379,
+                        "redis-password": "your_password_here",
+                        "redis-db": 0
+                        }}
         with open(file_name, 'w+', encoding='utf-8') as f:
             json.dump(config, f, indent=4, ensure_ascii=False)
 
