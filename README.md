@@ -175,7 +175,7 @@ your_project/
       ```
         - 现在假设配置文件如上我们要在mysql数据库内查找pd表内的所有数据我们可以这样来做
           ```python
-          data = DataExecute('mysql').data_read_execute(form_name = 'pd')
+          data = DataExecute('mysql'，).data_read_execute(form_name = 'pd')
           ```
         - 如果我们只要的是 `qd` $表单中的$ `user` $字段内容那么我们需要填写$ `creening_conditio` $参数$
           ```python
@@ -186,7 +186,8 @@ your_project/
           ```python
           data = DateExecute('mysql').data_read_execute(form_name = 'pd',creening_conditio=user,field = '积分 > 20')
           # 当我们在便捷查询方法中需要用到条件筛选查询时我们就要将field参数填写上，其内容为筛选的条件，数据类型要为字符串
-          ```  
+          ```
+        - 若我们的配置文件并不在当前文件夹下面或者配置文件的名称不为`data_config.json` $那么$
           
 ### 便携存储
 ### 高阶查询
